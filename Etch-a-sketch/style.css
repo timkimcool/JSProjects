@@ -1,0 +1,57 @@
+body {
+    background-image: url('https://www.topquadrant.com/wp-content/uploads/2019/01/tech-background-image-10.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+    justify-items: center;
+    text-align: center;
+    font-family: monospace;
+}
+.grid-container {
+    display: inline-grid;
+    width: 600px;
+    height: 600px;
+    margin: auto;
+    border: 30px solid burlywood;
+    /*grid-gap: 1px;*/
+
+}
+h1 {
+
+}
+
+.grid-item {
+    background-color: black;
+    border: .2px solid darkgray;
+}
+.grid-item2 {
+    background-color: pink;
+}
+
+div {
+}
+
+#resForm {
+
+}
+
+#colorForm {
+
+}
+
+.form {
+    font-size: 16px;
+}
+.submit {
+    color: black;
+    padding: 5px 5px;
+    background-color: white;
+}
+
+#reset {
+    color: black;
+    background-color: white;
+}
+#reset:hover {
+    background-color: gray;
+}

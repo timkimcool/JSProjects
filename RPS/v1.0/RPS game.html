@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rock, Paper, Scissor!</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+  <h1>Rock, Paper Scissor!</h1>
+  <h2>Round 1</h2>
+  <section>
+    <button class="grid-item">Rock</button>
+    <button class="grid-item">Paper</button>
+    <button class="grid-item">Scissor</button>
+  </section>
+
+  <div class="text-box"></div>
+ 
+
+
+
+
+
+
+  <script>
+    let score = [0, 0];
+    const btns = Array.from(document.querySelectorAll('.grid-item'));
+    btns.forEach((btn) => {
+      btn.addEventListener('click', buttonClick);
+      btn.addEventListener('transitionend', removeTransition);
+    });
+
+    function buttonClick(e) {
+      e.target.classList.add('clicked');
+      playround(e.target.textContent);
+    }
+
+    function playround(choice) {
+      writeTextBox(document.querySelector('h2').textContent);
+      cpuChoice = computerChoice()
+      writeTextBox('You chose ' + choice + '. Computer chose ' + cpuChoice + '.');
+      writeTextBox(winner(choice.toLowerCase(), cpuChoice.toLowerCase(), score) + 
+      ' Current score: Player: ' + score[0] + ' Computer: ' + score[1]);
+      let text =  document.querySelector('h2').textContent;
+      document.querySelector('h2').textContent = 'Round ' + (parseInt(text.substring(text.indexOf(" "))) + 1);
+    }
+
+    function writeTextBox(text) {
+      text = document.createTextNode(text);
+      const textBox = document.querySelector('.text-box');
+      textBox.appendChild(text);
+      textBox.appendChild(document.createElement("br"));
+    }
+
+    function computerChoice() {
+      let choice = Math.floor(Math.random() * 3)
+      console.log(choice);
+      switch(choice) {
+        case 0:
+          return 'Scissor';
+        case 1:
+          return 'Rock';
+        case 2:
+          return 'Paper';
+      }
+    }
+
+    function winner(player, cpu, score) {
+      if (player == cpu) { return "DRAW!"}
+      if ((player == 'scissor' && cpu == 'paper') || 
+          (player == 'rock' && cpu == 'scissor') ||
+          (player == 'paper' && cpu == 'rock')) { 
+            score[0]++;
+            return "YOU WIN!"}
+      score[1]++;
+      return "CPU WIN!"
+    }
+
+    function removeTransition(e) {
+      if (e.propertyName !== 'transform') return;
+      e.target.classList.remove('clicked');
+    }
+
+  </script>
+
+</body>
+</html>

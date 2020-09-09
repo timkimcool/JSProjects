@@ -1,0 +1,77 @@
+@import url(https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&display=swap);
+
+h1 {
+    color: darkcyan;
+    font-family: "Balsamiq Sans";
+    margin: auto;
+    width: 40%;
+    text-align: center;
+    font-size: 50px;
+    border: 5px solid darkcyan;
+    border-radius: 40%;
+    padding: .5em;
+}
+
+h2 {
+    text-align: center;
+    margin: auto;
+    font-family: "Balsamiq Sans";
+    font-size: 40px;
+    margin-top: 1em;
+}
+
+.clicked {
+    background-color: yellowgreen;
+    transform: scale(1.1);
+    box-shadow: 0 0 1rem gray;
+}
+
+.grid-item {
+    grid-row-start: 1;
+    width: 6em;
+    text-align: center;
+    font-size: 30px;
+    color: greenyellow;
+    font-family: "Balsamiq Sans";
+    font-weight: bold;
+    background-color: black;
+    padding: .5em 1em;
+    border-color: whitesmoke;
+    transition: all .07s ease;
+}
+
+.grid-item:hover {
+    background-color: grey;
+    box-shadow: 5px 5px greenyellow;
+}
+
+body {
+    background-image: url('https://i.pinimg.com/originals/78/81/2f/78812fd262025d24e53452a1307bbb6d.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+section {
+    display: grid;
+    grid-template-columns: 10% 10% 10%;
+    padding: 1em;
+    justify-items: center;
+    justify-content: space-evenly;
+    padding: 20px;
+    margin: 20px;
+}
+
+.text-box {
+    font-family: monospace;
+    margin: auto;
+    font-size: 20px;
+    background-color: black;
+    color: greenyellow;
+    text-align: left;
+    width: 45%;
+    align-self: center;
+    height: 30em;
+    margin-bottom: 5em;
+    padding: 5px;
+    overflow-y: auto;
+}

@@ -1,0 +1,119 @@
+body {
+  background-color: #44c9f5;
+}
+h1 {
+  background-color: #f5a844;
+  padding: .75em;
+  vertical-align: top !important;
+}
+
+.form1 {
+  display: none;
+  width: 100%;
+  padding: 30px 0;
+  background-color: #f5a844;
+  transition: top .5s ease;
+}
+
+.show-form { 
+  display: block;
+
+  transition: top .3s ease;
+}
+
+
+
+
+table, th, td {
+  border: 1px solid black;
+}
+
+th, td {
+  padding: 15px;
+  text-align: center; /* center checkbox horizontally */
+  vertical-align: middle; /* center checkbox vertically */
+}
+
+tr {
+  justify-items: center;
+}
+
+th {
+  background-color: #f55044;
+}
+
+.read {
+  margin: auto;
+
+}
+
+.buttonColor {
+  background-color: #44c9f5;
+  color: black;
+}
+
+#table {
+
+}
+
+#table tr:nth-child(even) {
+  background-color: #44c9f5;
+  padding: 10px;
+}
+
+#table tr:nth-child(odd) {
+  background-color: #64ffdb;
+  padding: 10px;
+}
+
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+.library {
+  display: grid;
+  grid-template-columns: repeate(4, 1fr);
+}
+.popup {
+  display: none;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 10%;
+  top: 10%;
+  width: 50%; /* Full width */
+  /*height: 50%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgb(52, 211, 131); /* Black w/ opacity */
+  padding: 1em;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+  /* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+  
+.close:hover, .close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}

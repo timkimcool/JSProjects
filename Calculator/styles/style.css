@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+:root {
+    --calculator-margin: 5px;
+    --font-size: 25px;
+    --font-family: 'Righteous';
+    --border-radius: 20%;
+}
+
+body {
+    background-color: darkgray;
+    font-family: var(--font-family);
+}
+#clear {
+    background-color: lightsalmon;
+}
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    width: 600px;
+    height: 400px;
+    border: 10px solid pink;
+    padding: var(--calculator-margin);
+    border-radius: 10%;
+}
+
+.numbers {
+    background-color: lightskyblue;
+}
+
+button {
+    display: flex;
+    background-color: lightseagreen;
+    font-size: var(--font-size);
+    font-weight: bold;
+
+    align-items: center;
+    justify-content: center;
+    margin: var(--calculator-margin);
+    border-radius: var(--border-radius);
+}
+
+button:hover {
+    /* transform: scale(.9); */
+    box-shadow: 0 0 1rem #ffc600;
+    border-color: #ffc600;
+}
+
+
+.clear {
+    background-color: orange;
+}
+
+.display {
+    grid-column-start: 1;
+    grid-column-end: 8;
+    background-color: lightgoldenrodyellow;
+    margin: var(--calculator-margin);
+    border-radius: 10%;
+    height: 70px;
+}
+
+.subDis {
+    font-size: 15px;
+    text-align: right;
+    padding: 5px 5px 0px 5px;
+    color: darkgray;
+    height: 20px;
+}
+.mainDis {
+    font-size: 30px;
+    text-align: right;
+    padding: 5px;
+}

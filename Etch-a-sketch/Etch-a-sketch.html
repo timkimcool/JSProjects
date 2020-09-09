@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Etch-a-Sketch</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Etch-a-Sketch</h1>
+    <form id='resForm' class='form' onsubmit="makeGrid();return false">
+        <label>Choose a number for your resolution in pixels: </label>
+        <input id='resInput' type="text" size="5" value="">
+        <input id='reset' type="submit">
+    </form>
+    <br>
+    <form id='colorForm' class='form' action="/action_page.php">
+        <label for="favcolor">Choose your pen color: </label>
+        <input type="color" id="colorInput" name="favcolor" value="#ff0000">
+    </form>
+    <br>
+    <form id='radioButton' class='form' action="/action_page.php">
+        <label for="favcolor">Drawing method </label>
+        <input type="radio" id="drawInput" value="hover" checked="checked" name="draw">
+        <label for="hover">Hover</label>
+        <input type="radio" value="click_drag" name="draw">
+        <label for="click_drag">Click</label>
+    </form>
+    <br>
+    <div class="grid-container"></div>
+    
+
+
+</body>
+
+<script>
+    let grid = document.querySelector('.grid-container');
+
+    function makeGrid(row) {
+        if (isNaN(row) || !row) {
+            row = parseInt(document.querySelector("#resInput").value);
+            console.log(row);
+            if (isNaN(row) || !row) {
+                alert("Please choose a valid number");
+                return;
+            }
+        }
+        while (grid.lastElementChild) {
+            grid.removeChild(grid.lastElementChild);
+        }
+        grid.style.setProperty('grid-template-columns', `repeat(${row},1fr`);
+        grid.style.setProperty('grid-template-rows', `repeat(${row},1fr`);
+        for (let i = 0; i < row; i++) {
+            for (let j = 0; j < row; j++) {
+              let gridItem = document.createElement('div');
+              grid.appendChild(gridItem).classList.add('grid-item');
+            }
+        }
+        let gridItems = document.querySelectorAll('.grid-item');
+        gridItems.forEach((gridItem) => {
+            gridItem.addEventListener('mouseover', (e) => {
+                if (document.getElementsByName('draw')[0].checked) {
+                    e.target.style.backgroundColor = document.querySelector('#colorInput').value;
+                }
+            })
+            gridItem.addEventListener('mousedown', (e) => {
+                if (document.getElementsByName('draw')[1].checked) {
+                    e.target.style.backgroundColor = document.querySelector('#colorInput').value;
+                }
+            })           
+        })
+    }
+    makeGrid(16);
+    //document.querySelector('#reset').addEventListener('click', function() {makeGrid()});
+
+</script>
+</html>
